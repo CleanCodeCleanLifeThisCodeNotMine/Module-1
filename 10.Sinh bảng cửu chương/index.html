@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+<h1>Bảng cửu chương</h1>
+<script>
+  let bang, dong, cot;
+  bang = "<table border='1' width='300' cellspacing='0' cellpadding='15'>";
+  for (dong = 1; dong <= 10; dong++) {
+    bang = bang + "<tr>";
+    for (cot = 1; cot <= 10; cot++) {
+      bang = bang + "<td>" + cot + "*" + dong + "=" + dong * cot + "</td>";
+                      //noi dung cua cot <td></td>
+    }
+    bang = bang + "</tr>";
+  }
+  bang = bang + "</table>";
+  document.write(bang);
+</script>
+</body>
+
+</html>

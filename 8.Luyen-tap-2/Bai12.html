@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<label from="a">Nhap Tien Lai: </label>-->
+<!--<input type="text" id="a">-->
+<!--<br>-->
+<label from="b">Nhap Du No Goc: </label>
+<input type="text" id="b">
+<br>
+<label from="c">Nhap Lai Suat Vay: </label>
+<input type="text" id="c">
+<br>
+<label from="d">Nhap Thoi Han Vay: </label>
+<input type="text" id="d">
+<br>
+<button onclick="cal()">Check</button>
+<p id="result"></p>
+</body>
+<script>
+    function cal() {
+        // let a = document.getElementById("a").value
+        let b = document.getElementById("b").value
+        let c = document.getElementById("c").value
+        let d = document.getElementById("d").value
+        let laisuat = b * c / d
+        document.getElementById("result").innerHTML='So tien lai suat hang thang la: ' + laisuat + "<br>" + "Vui long thanh toan dung han"
+    }
+</script>
+</html>

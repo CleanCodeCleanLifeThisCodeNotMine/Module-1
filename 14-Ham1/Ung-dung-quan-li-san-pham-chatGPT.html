@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý sản phẩm</title>
+    <style>
+        table {
+            width: auto;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border: 1px solid black;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Quản lý sản phẩm</h2>
+
+<!-- Form thêm sản phẩm -->
+<h3>Thêm sản phẩm mới</h3>
+<input type="text" id="productName" placeholder="Tên sản phẩm">
+<button onclick="addProduct()">Thêm</button>
+
+<!-- Hiển thị danh sách sản phẩm -->
+<h3>Danh sách sản phẩm</h3>
+<table id="productTable">
+    <thead>
+    <tr>
+        <th>STT</th>
+        <th>Tên sản phẩm</th>
+        <th>Thao tác</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Sản phẩm sẽ hiển thị ở đây -->
+    </tbody>
+</table>
+
+<script>
+    // Mảng lưu trữ danh sách sản phẩm
+    let products = ["Sản phẩm A", "Sản phẩm B", "Sản phẩm C"];
+
+    // Hàm hiển thị danh sách sản phẩm
+    function displayProducts() {
+        const table = document.getElementById("productTable").getElementsByTagName('tbody')[0];
+        table.innerHTML = ""; // Làm trống bảng trước khi hiển thị lại
+
+        for (let i = 0; i < products.length; i++) {
+            const row = table.insertRow();
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
+            const cell3 = row.insertCell(2);
+
+            cell1.innerHTML = i + 1;
+            cell2.innerHTML = `
+                <span id="product-${i}">${products[i]}</span>
+                <input type="text" id="edit-product-${i}" style="display:none;" value="${products[i]}"
+                onkeydown="editProduct(event, ${i})">
+            `;
+            cell3.innerHTML = `
+                <button onclick="editProductMode(${i})">Sửa</button>
+                <button onclick="deleteProduct(${i})">Xóa</button>
+            `;
+        }
+    }
+
+    // Hàm thêm sản phẩm
+    function addProduct() {
+        const productName = document.getElementById("productName").value;
+        if (productName) {
+            products.push(productName);
+            document.getElementById("productName").value = ""; // Làm trống ô nhập
+            displayProducts(); // Cập nhật danh sách
+        }
+    }
+
+    // Hàm chuyển sang chế độ sửa sản phẩm
+    function editProductMode(index) {
+        const productSpan = document.getElementById(`product-${index}`);
+        const productInput = document.getElementById(`edit-product-${index}`);
+
+        productSpan.style.display = 'none';
+        productInput.style.display = 'inline-block';
+        productInput.focus();  // Focus vào ô input
+    }
+
+    // Hàm xử lý khi nhấn Enter để sửa sản phẩm
+    function editProduct(event, index) {
+        if (event.key === "Enter") {
+            const newName = document.getElementById(`edit-product-${index}`).value;
+            if (newName) {
+                products[index] = newName;
+                displayProducts(); // Cập nhật danh sách sản phẩm
+            }
+        }
+    }
+
+    // Hàm xóa sản phẩm
+    function deleteProduct(index) {
+        products.splice(index, 1);
+        displayProducts(); // Cập nhật danh sách sau khi xóa
+    }
+
+    // Hiển thị danh sách sản phẩm khi tải trang
+    displayProducts();
+</script>
+
+</body>
+</html>

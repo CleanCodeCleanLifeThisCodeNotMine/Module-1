@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xem ai cao hon nao</title>
+</head>
+<body>
+<label for="numb1">Nhap so thu nhat:</label>
+<input type="text" name="" id="numb1">
+
+<br><label for="numb2">Nhap so thu hai:</label>
+<input type="text" name="" id="numb2">
+
+<br><label for="numb3">Nhap so thu ba:</label>
+<input type="text" name="" id="numb3">
+
+<br>
+
+<button onclick="cal()">ChECk!</button>
+<p id = "result"></p>
+</body>
+<script>
+  function cal(){
+    let a = +document.getElementById("numb1").value
+    let b = +document.getElementById("numb2").value
+    let c = +document.getElementById("numb3").value
+    if (a > b && b > c) {
+      document.getElementById("result").innerHTML= 'So lon nhat la ' + a
+    } else if (a < b && b > c) {
+      document.getElementById("result").innerHTML = 'So lon nhat la ' + b
+    } else if (a < b && b < c) {
+        document.getElementById("result").innerHTML= 'So lon nhat la ' + c
+      }
+  }
+</script>
+</html>

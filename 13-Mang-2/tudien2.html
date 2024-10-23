@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Từ điển</title>
+</head>
+<body>
+<label for = "index">Nhap tu tai day</label>
+<input type="text" id="index" placeholder="eng only">
+<button type="button" onclick="check()">Dich</button>
+<p id="result"></p>
+
+<script>
+    function check() {
+        let eng = ["dog, cat, cow, chicken, pig, strong"]
+        let vie = ["chó, mèo, bò, gà, lợn, Mạnh"];
+        let nhap = document.getElementById("index").value;
+        let found = false;
+
+        for (let i = 0; i < eng.length; i++) {
+            if (eng[i] === nhap) {
+                found = true;
+                document.getElementById("result").innerHTML=`Từ "${nhap}" nghĩa là: ${vie[i]}`
+                break;
+            }
+        }
+
+        if (!found) {
+            document.getElementById("result").innerHTML= "Không tìm thấy từ này trong từ điển."
+        }
+    }
+</script>
+</body>
+</html>

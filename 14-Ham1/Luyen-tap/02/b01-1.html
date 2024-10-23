@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Square Calculation</title>
+</head>
+<body>
+
+<h3>Nhập số để tính bình phương:</h3>
+
+<!-- Ô nhập số -->
+<input type="number" id="inputNumber" placeholder="Nhập số">
+
+<!-- Nút Add để thêm số vào danh sách -->
+<button onclick="addNumber()">Add</button>
+
+<!-- Nút Calculation để tính bình phương của các số đã thêm -->
+<button onclick="calculateSquares()">Calculation</button>
+
+<!-- Khu vực hiển thị danh sách các số đã thêm -->
+<h3>Các số đã nhập:</h3>
+<ul id="numberList"></ul>
+
+<!-- Khu vực hiển thị kết quả -->
+<h3>Kết quả:</h3>
+<div id="result"></div>
+
+<script>
+  // Mảng để lưu trữ các số đã thêm
+  let numbers = [];
+
+  // Hàm thêm số vào danh sách
+  function addNumber() {
+    let input = document.getElementById('inputNumber');
+    let number = parseFloat(input.value);
+
+    if (!isNaN(number)) {  // Kiểm tra nếu giá trị nhập vào là số hợp lệ
+      numbers.push(number);  // Thêm số vào mảng
+      updateNumberList();    // Cập nhật danh sách số trên giao diện
+      input.value = '';      // Xóa ô nhập sau khi thêm
+    } else {
+      alert('Vui lòng nhập một số hợp lệ!');
+    }
+  }
+
+  // Hàm cập nhật danh sách số đã nhập
+  function updateNumberList() {
+    let list = document.getElementById('numberList');
+    list.innerHTML = '';  // Xóa danh sách cũ
+
+    // Hiển thị danh sách các số đã nhập
+    numbers.forEach(function(num, index) {
+      let li = document.createElement('li');
+      li.innerText = 'Số ' + (index + 1) + ': ' + num;
+      list.appendChild(li);
+    });
+  }
+
+  // Hàm tính bình phương
+  function binhPhuong(so) {
+    return so * so;
+  }
+
+  // Hàm tính toán bình phương cho tất cả các số đã thêm
+  function calculateSquares() {
+    let resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = '';  // Xóa kết quả cũ
+
+    // Tính bình phương cho từng số và hiển thị
+    numbers.forEach(function(num, index) {
+      let result = binhPhuong(num);
+      let p = document.createElement('p');
+      p.innerText = 'Bình phương của số ' + num + ' là: ' + result;
+      resultDiv.appendChild(p);
+    });
+  }
+</script>
+
+</body>
+</html>

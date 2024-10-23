@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý sản phẩm</title>
+</head>
+<style>
+    #input-div {
+        background-color: #e7eded;
+        align-content: center;
+        text-align: center;
+        width: 275px;
+        height: 50px;
+    }
+    #input-product-name {
+        width: 150px;
+        height: 20px;
+    }
+    button {
+        background-color: #23d30c;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        height: 25px;
+    }
+    button:hover {
+        background-color: #136308;
+    }
+    table {
+        border-collapse: collapse;
+        width: 400px;
+    }
+    h3 {
+        text-align: left;
+    }
+    #table-header {
+        background-color: #afbce8;
+    }
+    #product-count {
+        color: red;
+        font-weight: bold;
+        text-align: right;
+    }
+    .product-name-td {
+        width: 60%;
+    }
+
+    .td-edit, .td-delete {
+        text-align: center;
+        width: 20%;
+    }
+    .button-edit, .button-delete {
+    }
+    tr:nth-child(even) {
+        background-color: #e0e3ea;
+    }
+</style>
+
+<body onload="Initialize()">
+<div id="input-div">
+    <label><input type="text" id="input-product-name"></label>
+    <button type="button" id="add-sp">Add</button>
+</div>
+<table>
+    <caption><h3>Display All Product</h3></caption>
+    <thead>
+    <tr id="table-header">
+        <th id="product-name-header">Product Name</th>
+        <th id="product-count" colspan="2">0 product</th>
+    </tr>
+    </thead>
+    <tbody id="product-list">
+    </tbody>
+</table>
+</body>
+
+<script>
+    let list = [];
+    let input;
+    let btAdd;
+    let productCount
+    let productDataTable;
+
+    function Initialize() {
+        input = document.getElementById("input-product-name");
+        btAdd = document.getElementById("add-sp");
+        productCount = document.getElementById("product-count");
+        productDataTable = document.getElementById("product-list")
+        btAdd.addEventListener("click", Add);
+    }
+
+    function Add() {
+        ResetEdit();
+        let name = input.value;
+        list.push(name);
+        let i = list.length - 1;
+        let s = `
+    <tr class="product-data" id="row-${i}">
+        <td class="product-name-td" id="product-name${i}">${name}</td>
+        <td class="td-edit"><button type="button" class="button-edit" onclick="ButtonClick_Edit(${i})">Edit</button></td>
+        <td class="td-delete"><button type="button" class="button-delete" onclick="ButtonClick_Delete(${i})">Delete</button></td>
+    </tr>`;
+
+        productDataTable.innerHTML += s;
+        productCount.innerHTML = `${i+1} product${i>0? "s":""}`;
+    }
+
+    let currentEle = null;
+    let currentPd = null;
+    function ResetEdit() {
+        if (currentEle !== null) {
+            currentEle.innerHTML = currentPd;
+            currentEle = null;
+            currentPd = null;
+        }
+    }
+    function ButtonClick_Edit(id) {
+        if (currentEle === document.getElementById(`product-name${id}`)) {
+            currentEle.innerHTML = document.getElementById(`input-edit`).value;
+            currentEle = null;
+            currentPd = null;
+            return;
+        }
+        if (currentEle !== null) {
+            currentEle.innerHTML = currentPd;
+        }
+        currentEle = document.getElementById(`product-name${id}`);
+        currentPd = currentEle.innerHTML;
+        currentEle.innerHTML = `<label><input type="text" id="input-edit" value="${currentPd}"></label>`;
+    }
+
+    function ButtonClick_Delete(id) {
+        document.getElementById(`row-${id}`).remove();
+    }
+</script>
+
+</html>

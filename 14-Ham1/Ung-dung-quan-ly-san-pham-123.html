@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h2>Quản lý Nô Lệ</h2>
+<body>
+<input placeholder="Nhap ten san pham" id="newProduct"><button onclick="adds()">Add</button>
+<br>
+<br>
+<p id="count">So luong: 0 San Pham</p>
+<table border="1" >
+  <tr>
+    <th>STT</th>
+    <th>Tên Nô Lệ</th>
+    <th>Thao tac</th>
+  </tr>
+  <tbody id="content" style="text-align: center">
+  <tr>
+    <td>1</td>
+    <td>Mạnh</td>
+    <td><button>Edit</button><button>Delete</button></td>
+
+  </tr>
+  </tbody>
+</table>
+</body>
+<script src="ung-dung-quan-li-san-pham.js"></script>
+<style>
+  /* Định dạng chung */
+  p{
+    float: right;
+    margin-right: 10px;
+    font-size: 12px;
+    font-style: oblique;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+  }
+
+  input {
+    padding: 10px;
+    width: 60%;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
+  button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+
+  button:hover {
+    opacity: 0.8;
+  }
+
+  /* Nút Add */
+  button[onclick="adds()"] {
+    background-color: #28a745;
+    color: white;
+  }
+
+  /* Nút Edit */
+  button[onclick^="edit"] {
+    background-color: #ffc107;
+    color: white;
+  }
+
+  /* Nút Delete */
+  button[onclick^="remove"] {
+    background-color: #dc3545;
+    color: white;
+  }
+
+  /* Bảng */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  th, td {
+    padding: 12px;
+    text-align: center;
+  }
+
+  th {
+    background-color: #007bff;
+    color: white;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  tbody tr:hover {
+    background-color: #ddd;
+  }
+
+</style>
+</html>

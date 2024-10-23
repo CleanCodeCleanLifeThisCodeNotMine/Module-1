@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Hello</h3>
+<p id="result"></p>
+</body>
+
+<script>
+    let text = "";
+    let i;
+    for ( i = 0 ; i <= 10; i++){
+        text += 'number is ' + i + "<br>";
+        //dùng += sẽ giữ lại toàn bộ chuỗi được tạo ra trong các vòng lặp trước, thay vì ghi đè nó ở mỗi lần lặp
+    }
+    document.getElementById("result").innerHTML= text
+</script>
+</html>

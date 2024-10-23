@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="bankinh"> Nhap ban kinh</label>
+<input type="text" id="bankinh">
+<button type="button" onclick="cal()">Calculate</button>
+<p id="resultCV"></p>
+<p id="resultDT"></p>
+
+</body>
+<script>
+  function cal() {
+    let a = parseInt(document.getElementById("bankinh").value)
+  if (a > 0){
+    document.getElementById("resultCV").innerHTML = 'Chu vi: ' + (2 * Math.PI * a)
+    document.getElementById("resultDT").innerHTML = 'Dien tich ' + (Math.PI * a * a)
+  } else {
+      alert('Nhap lai mot so hop le va lon hon 0 pls')}
+  }
+</script>
+</html>

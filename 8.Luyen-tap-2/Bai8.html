@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label from="sotuoi">Nhap so tuoi: </label>
+<input type="text" id="sotuoi">
+<button onclick="cal()">Check</button>
+<p id="result"></p>
+</body>
+<script>
+    function cal() {
+        let a = +document.getElementById("sotuoi").value
+        if (a > 0 && a <120) {
+            document.getElementById("result").innerHTML='Human'
+        } else if (a < 0) {
+            document.getElementById("result").innerHTML = 'Your mom'
+        } else {
+            document.getElementById("result").innerHTML = 'Alien'
+        }
+
+    }
+</script>
+</html>

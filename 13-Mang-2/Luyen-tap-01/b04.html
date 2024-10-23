@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.
+//chatgpt:
+// let input = prompt("Nhập các số, cách nhau bởi dấu phẩy (ví dụ: 1,2,3):");
+// let a = input.split(',').map(Number); // Chia chuỗi thành mảng và chuyển đổi thành số
+
+let a = [1,2,3]
+let sodautien = 0
+let socuoicung = a.length - 1
+while (sodautien < socuoicung){
+  let b = a[sodautien]
+  a[sodautien] = a[socuoicung]
+  a[socuoicung] = b
+  sodautien++
+  socuoicung--
+}
+alert(a)
+
+</script>
+</body>
+</html>

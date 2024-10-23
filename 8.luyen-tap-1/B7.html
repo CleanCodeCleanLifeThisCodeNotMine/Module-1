@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tính giá điện</title>
+</head>
+<body>
+<h2>Tính tiền điện tiêu thụ</h2>
+<input type="number" id="kwh" placeholder="Nhập số kWh">
+<input type="button" value="Tính tiền điện" onclick="tinhTienDien()">
+<p id="result"></p>
+
+<script>
+  const Muc1 = 1806
+  const Muc2 = 1866
+  const Muc3 = 2167
+  const Muc4 = 2729
+  const Muc5 = 3050
+  const Muc6 = 3151
+
+  function tinhTienDien() {
+    let kwh = parseFloat(document.getElementById("kwh").value);
+    let tongTien = 0;
+
+    if (kwh <= 0) {
+      document.getElementById("result").innerText = "Số kWh phải lớn hơn 0.";
+      return;
+    }
+
+    if (kwh <= 50) {
+      tongTien = kwh * Muc1;
+    } else if (kwh <= 100) {
+      tongTien = 50 * Muc1 + (kwh - 50) * Muc2;
+    } else if (kwh <= 200) {
+      tongTien = 50 * Muc1 + 50 * Muc2 + (kwh - 100) * Muc3;
+    } else if (kwh <= 300) {
+      tongTien = 50 * Muc1 + 50 * Muc2 + 100 * Muc3 + (kwh - 200) * Muc4;
+    } else if (kwh <= 400) {
+      tongTien = 50 * Muc1 + 50 * Muc2 + 100 * Muc3 + 100 * Muc4 + (kwh - 300) * Muc5;
+    } else {
+      tongTien = 50 * Muc1 + 50 * Muc2 + 100 * Muc3 + 100 * Muc4 + 100 * Muc5 + (kwh - 400) * Muc6;
+    }
+
+    document.getElementById("result").innerText = `Tổng tiền điện: ${tongTien.toLocaleString()} VND`;
+  }
+</script>
+</body>
+</html>
+Collapse
+
+
+
+
+
+
+
+
+
+

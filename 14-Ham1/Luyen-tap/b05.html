@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="sao">Nhap ten sao: </label>
+<input type="text" name="" id="sao">
+<button type="button" onclick="nhatlatimsao()"> tim </button>
+<p id="result"></p>
+</body>
+<script>
+  function nhatlatimsao(){
+  let a = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe" , "Regulus"]
+  let b = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"]
+  let nhap = document.getElementById("sao").value
+  let found = false
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] === nhap){
+      found = true
+      document.getElementById("result").innerHTML= `${b[i]}`
+
+    } else if (!found){
+      document.getElementById("result").innerHTML= 'ko thay'
+    }
+  }
+  }
+</script>
+</html>

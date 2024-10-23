@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Conversion</title>
+</head>
+<body>
+
+<label for="foot">Nhập số foot:</label>
+<input type="number" id="foot" oninput="calFoot()"> <br>
+Số Meters sau quy đổi là: <p id="footToMeter"></p>
+<hr>
+<label for="meters">Nhập số meters:</label>
+<input type="number" id="meters" oninput="calMeters()"> <br>
+Số Feet sau quy đổi là: <p id="meterToFoot"></p>
+
+<script>
+  function calFoot() {
+    let foot = document.getElementById("foot").value;
+    document.getElementById('footToMeter').innerHTML = (0.305 * foot).toFixed(2);
+  }
+
+  function calMeters() {
+    let meters = document.getElementById("meters").value;
+    document.getElementById('meterToFoot').innerHTML = (3.279 * meters).toFixed(2);
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Nhập Dữ liệu Bằng JavaScript</title>
+  <style>
+    /* Thêm một lớp để tạo hiệu ứng khi di chuột */
+    .hover-effect {
+      color: deeppink; /* Màu mặc định */
+      transition: color 0.3s ease; /* Tạo hiệu ứng chuyển màu mượt */
+    }
+
+    /* Khi di chuột vào, màu sẽ đổi */
+    .hover-effect:hover {
+      color: blue; /* Đổi màu thành xanh khi di chuột */
+    }
+    /* Doi font cho output */
+    .output {
+      /*font-family: Arial;*/
+      /*font-style: ;*/
+      font-size: 25px;
+    }
+  </style>
+</head>
+<body>
+<h1>Nhập Dữ liệu Từ Người Dùng</h1>
+
+<!-- Input -->
+<h2>Nhập tên qua Input</h2>
+<label for="nameInput">Tên:</label>
+<input type="text" id="nameInput" placeholder="Nhập tên của bạn">
+<button onclick="showName()">Gửi</button>
+<p id="nameOutput" class="output hover-effect" onmouseover="changeColor(this)" onmouseout="resetColor(this)"></p>
+
+<hr>
+
+<!-- Textarea -->
+<h2>Nhập tin nhắn qua Textarea</h2>
+<label for="message">Tin nhắn:</label>
+<textarea id="message" rows="4" cols="50" placeholder="Nhập tin nhắn của bạn"></textarea>
+<button onclick="showMessage()">Gửi</button>
+<p id="messageOutput" class="output hover-effect" onmouseover="changeColor(this)" onmouseout="resetColor(this)"></p>
+
+<hr>
+
+<!-- Select -->
+<h2>Chọn màu yêu thích qua Select</h2>
+<label for="colorSelect">Chọn màu:</label>
+<select id="colorSelect">
+  <option value="Đỏ">Đỏ</option>
+  <option value="Xanh">Xanh</option>
+  <option value="Vàng">Vàng</option>
+</select>
+<button onclick="showColor()">Xác nhận</button>
+<p id="colorOutput" class="output hover-effect" onmouseover="changeColor(this)" onmouseout="resetColor(this)"></p>
+
+<hr>
+
+<!-- Checkbox -->
+<h2>Chọn sở thích qua Checkbox</h2>
+<input type="checkbox" id="hobby1" name="hobby" value="Đọc sách">
+<label for="hobby1">Đọc sách</label><br>
+<input type="checkbox" id="hobby2" name="hobby" value="Chơi thể thao">
+<label for="hobby2">Chơi thể thao</label><br>
+<input type="checkbox" id="hobby3" name="hobby" value="Xem phim">
+<label for="hobby3">Xem phim</label><br>
+<button onclick="showHobbies()">Xác nhận</button>
+<!-- Kết quả sở thích, áp dụng sự kiện onmouseover và onmouseout -->
+<p id="hobbyOutput" class="output hover-effect" onmouseover="changeColor(this)" onmouseout="resetColor(this)"></p>
+
+<script>
+  // Hàm lấy và hiển thị tên
+  function showName() {
+    let name = document.getElementById("nameInput").value;
+    document.getElementById("nameOutput").textContent = "Tên của bạn là: " + name;
+  }
+
+  // Hàm lấy và hiển thị tin nhắn
+  function showMessage() {
+    let message = document.getElementById("message").value;
+    document.getElementById("messageOutput").textContent = "Tin nhắn của bạn: " + message;
+  }
+
+  // Hàm lấy và hiển thị màu yêu thích
+  function showColor() {
+    let color = document.getElementById("colorSelect").value;
+    document.getElementById("colorOutput").textContent = "Màu yêu thích của bạn là: " + color;
+  }
+
+  // Hàm lấy danh sách sở thích đã chọn và hiển thị chúng
+  function showHobbies() {
+    let hobbies = []; // Mảng chứa các sở thích đã chọn
+    let checkboxes = document.querySelectorAll('input[name="hobby"]:checked'); // Lấy các checkbox được chọn
+    checkboxes.forEach((checkbox) => {
+      hobbies.push(checkbox.value); // Thêm giá trị của checkbox vào mảng hobbies
+    });
+    document.getElementById("hobbyOutput").textContent = "Sở thích của bạn: " + hobbies.join(", ");
+  }
+
+  // Hàm đổi màu khi di chuột vào kết quả
+  function changeColor(element) {
+    element.style.color = "red"; // Đổi thành màu đỏ khi di chuột
+  }
+
+  // Hàm đặt lại màu khi rời chuột khỏi kết quả
+  function resetColor(element) {
+    element.style = "hover-effect"; // Trả về màu ban đầu (màu đen)
+  }
+</script>
+</body>
+</html>

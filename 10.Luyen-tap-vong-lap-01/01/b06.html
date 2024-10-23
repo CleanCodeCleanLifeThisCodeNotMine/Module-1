@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.
+  // let numb = 0;
+  // total = 0
+  // for (let i = 1; i < 30; i++) {
+  //   numb[i] = numb[i] % 7 === 0;
+  //   total = total +i
+  // }
+  // document.write(total);
+  let sum = 0;
+  let count = 0;
+  let number = 0; // Bắt đầu từ số chia hết cho 7 đầu tiên
+
+  while (count < 30) {
+    if (number % 7 === 0) {
+      sum += number; // Cộng số đó vào tổng
+      count++; // Tăng biến đếm số chia hết cho 7
+    }
+    number++; // Chuyển sang số tiếp theo
+  }
+
+  document.write("Tổng của 30 số chia hết cho 7 đầu tiên là: " + sum);
+
+</script>
+</body>
+</html>

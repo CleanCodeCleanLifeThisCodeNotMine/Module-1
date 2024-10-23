@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+ let sotien = parseInt(prompt("Nhap so tien ban dau"))
+ let sothang = parseInt(prompt("Nhap so thang vay"))
+ let laisuat = prompt("Nhap so lai suat")
+ let tongsotien = sotien
+ for (let i = 1; i < sothang; i++) {
+     let tienlai = sotien * (laisuat/100) / sothang;
+     tongsotien += tienlai
+ }
+ document.write(tongsotien)
+
+</script>
+</body>
+</html>

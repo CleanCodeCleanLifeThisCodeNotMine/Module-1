@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="numb1">Nhap so diem kiem tra:</label>
+<input type="text" name="" id="numb1">
+<br>
+<label for="numb2">Nhap so diem giua ki:</label>
+<input type="text" name="" id="numb2">
+<br>
+<label for="numb3">Nhap so diem cuoi ki:</label>
+<input type="text" name="" id="numb3">
+<br>
+<button onclick="cal()">Check!</button>
+<p id="result"></p>
+</body>
+<script>
+  function cal() {
+    let a = +document.getElementById("numb1").value
+    let b = +document.getElementById("numb2").value
+    let c = +document.getElementById("numb3").value
+    score = (a + b + c) / 3
+    if (score < 4){
+      document.getElementById("result").innerHTML= 'So diem trung binh la '+ score+ '.'+' Dat loai Yeu'
+    } else if (4<= score < 7) {
+      document.getElementById("result").innerHTML= 'So diem trung binh la '+ score+ '.'+' Dat loai Kha'
+    } else if (score >= 7) {
+      document.getElementById("result").innerHTML= 'So diem trung binh la '+ score+ '.'+' Dat loai Gioi'
+    }
+  }
+</script>
+</html>

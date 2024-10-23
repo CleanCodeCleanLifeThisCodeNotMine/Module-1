@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính chỉ số cân nặng của cơ thể</title>
+</head>
+<body>
+
+<h1>Tính chỉ số cân nặng</h1>
+<label for="can_nang"> Nhap can nang (kg):</label>
+<input type="text" id="can_nang">
+<br>
+<label for="chieu_cao"> Nhap chieu cao (m):</label>
+<input type="text" id="chieu_cao">
+<br>
+<button onclick="check()">Calculate</button>
+
+<p id="ketqua"></p>
+
+<script>
+    function check() {
+        let cannang = document.getElementById("can_nang").value;
+        let chieucao = document.getElementById("chieu_cao").value;
+        let BMI = cannang / ( Math.pow(chieucao, 2) )
+        let ketqua = ""
+
+
+        if (BMI < 18)
+            ketqua= "Underweight";
+        else if (BMI < 25.0)
+            ketqua= "Normal";
+        else if (BMI < 30.0)
+            ketqua= "Overweight";
+        else
+            ketqua= "Obese";
+
+        // document.getElementById("ketqua").innerHTML = "Chỉ số BMI là: " + BMI + '.' + 'You are ' + ket_qua;
+        document.getElementById("ketqua").innerHTML = 'Chỉ số BMI là: ' + BMI + '. You are ' + ketqua;
+
+    }
+</script>
+</body>
+
+
+</html>

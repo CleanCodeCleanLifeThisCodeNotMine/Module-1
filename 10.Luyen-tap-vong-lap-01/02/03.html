@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  for (let i = 1; i <= 5; i++) {
+    document.write('*'.repeat(i) + "<br>")
+  }
+</script>
+<hr>
+<script>
+
+for (let g = 5; g >= 1; g--) {
+    document.write('*'.repeat(g) + "<br>")
+  }
+
+</script>
+<hr>
+<script>
+  for (let h = 5; h >= 1; h--) {
+    document.write('&nbsp;&nbsp;'.repeat(5 - h) + '*'.repeat(h) + "<br>")
+  }
+</script>
+<hr>
+<script>
+  for (let j = 1; j <= 5; j++) {
+    document.write('&nbsp;&nbsp;'.repeat(5 - j) + '*'.repeat(j) + "<br>")
+  }
+</script>
+<hr>
+<script>
+    function inHinhChuNhatRong(chieuDai, chieuRong) {
+        // In hàng đầu tiên (toàn dấu *)
+        document.write('*'.repeat(chieuDai) + "<br>");
+
+        // In các hàng ở giữa (dấu * ở 2 đầu, bên trong là khoảng trắng)
+        for (let i = 0; i < chieuRong - 2; i++) {
+            document.write('*' + '&nbsp;'.repeat(chieuDai - 2) + '*' + "<br>");
+        }
+
+        // In hàng cuối cùng (toàn dấu *)
+        document.write('*'.repeat(chieuDai) + "<br>");
+    }
+
+    let chieuDai = parseInt(prompt("Nhập chiều dài của hình chữ nhật:"));
+    let chieuRong = parseInt(prompt("Nhập chiều rộng của hình chữ nhật:"));
+
+    if (chieuDai > 1 && chieuRong > 1) {
+        inHinhChuNhatRong(chieuDai, chieuRong);
+    } else {
+        document.write("Vui lòng nhập chiều dài và chiều rộng lớn hơn 1.");
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script>
+    let value = prompt("enter number:")
+    let number = [-3, 5, 1, 3, 2, 10]
+
+    // Mô tả: Khởi tạo biến index với giá trị mặc định là -1. Giá trị này sẽ được sử dụng để lưu vị trí (chỉ số) của số được tìm thấy trong mảng. Nếu sau khi tìm kiếm mà index vẫn là -1, điều đó có nghĩa là số đó không có trong mảng.
+    let index = -1
+
+    /**
+     * Mô tả:
+     * Sử dụng vòng lặp for để duyệt qua từng phần tử trong mảng numbers.
+     * i là biến đếm từ 0 đến độ dài của mảng trừ 1.
+     * Trong mỗi lần lặp, kiểm tra xem value có bằng với numbers[i] không.
+     * Nếu bằng, cập nhật giá trị của index bằng chỉ số hiện tại i.
+     */
+    for (let i = 0; i < number.length; i++) {
+      if (value == number[i]){
+        // alert("value " + number[i] + " found at " + [i + 1]) //[i +1] de tang 1 gia tri khi dem bat dau tu 0
+          index = i
+      }
+      if (index>-1){
+          alert("value " + value + " found at " + index)
+      } else {
+          alert("value " + value + " not found")
+
+      }
+    }
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPrime(numbers){
+        if (numbers <=1) return false;
+        for (let i = 2; i < Math.sqrt(numbers); i++) {
+           if(numbers % i === 0) {
+               return false
+           }
+        }
+        return true
+    }
+
+    function timso(){
+        let prime = []
+        for (let i = 2; i < 10000; i++) {
+            if (isPrime(i)) {
+                prime.push(i)
+            }
+        }
+        return prime
+    }
+    let cacsonguyento = timso()
+    document.write(cacsonguyento.join("<br>"))
+</script>
+</body>
+</html>

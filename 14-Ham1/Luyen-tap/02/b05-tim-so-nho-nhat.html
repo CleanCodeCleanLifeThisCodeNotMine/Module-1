@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Find Minimum</title>
+</head>
+<body>
+
+<label for="num1">Nhập số 1:</label>
+<input type="text" id="num1">
+<br>
+<label for="num2">Nhập số 2:</label>
+<input type="text" id="num2">
+<br>
+<label for="num3">Nhập số 3:</label>
+<input type="text" id="num3">
+<br>
+<button type="button" onclick="findMin()">Tìm số nhỏ nhất</button>
+<p id="result"></p>
+
+<script>
+  function findMin() {
+    let a = parseInt(document.getElementById("num1").value);
+    let b = parseInt(document.getElementById("num2").value);
+    let c = parseInt(document.getElementById("num3").value);
+    let min = Math.min(a, b, c);
+    document.getElementById("result").innerHTML = 'Số nhỏ nhất là: ' + min;
+  }
+</script>
+
+</body>
+</html>

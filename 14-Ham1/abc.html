@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Complex Alert Message</title>
+  <style>
+    /* Phong cách giao diện hiện đại */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+    #chatWindow {
+      width: 400px;
+      height: 600px;
+      margin: 50px auto;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      overflow-y: auto;
+    }
+    #chatInput {
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .message {
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 5px;
+    }
+    .userMessage {
+      background-color: #e0f7fa;
+      text-align: right;
+    }
+    .botMessage {
+      background-color: #ffecb3;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+<div id="chatWindow">
+  <div id="messages"></div>
+  <input type="text" id="chatInput" placeholder="Nhập tin nhắn và nhấn Enter...">
+</div>
+
+<script>
+  let messagesDiv = document.getElementById('messages');
+  let input = document.getElementById('chatInput');
+
+  // Hàm thêm tin nhắn vào cửa sổ chat
+  function addMessage(content, isUser) {
+    let messageDiv = document.createElement('div');
+    messageDiv.classList.add('message', isUser ? 'userMessage' : 'botMessage');
+    messageDiv.innerText = content;
+    messagesDiv.appendChild(messageDiv);
+    messagesDiv.scrollTop = messagesDiv.scrollHeight; // Cuộn xuống cuối chat
+  }
+
+  // Giả lập AI trả lời tin nhắn
+  async function aiReply(userMessage) {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        // Giả lập phản hồi từ AI sau một khoảng thời gian
+        let botMessage = "AI: Bạn đã nói '" + userMessage + "' nhưng tôi chưa hiểu.";
+        resolve(botMessage);
+      }, 2000);
+    });
+  }
+
+  // Xử lý sự kiện nhấn Enter
+  input.addEventListener('keydown', async function(event) {
+    if (event.key === 'Enter') {
+      let userMessage = input.value.trim();
+      if (userMessage !== "") {
+        addMessage(userMessage, true);  // Thêm tin nhắn người dùng
+        input.value = "";  // Xóa nội dung input
+
+        // Gọi hàm AI để xử lý tin nhắn và nhận phản hồi
+        let botMessage = await aiReply(userMessage);
+        addMessage(botMessage, false);  // Thêm tin nhắn từ AI
+      }
+    }
+  });
+
+  // Hàm tính toán phức tạp giả lập với tải nặng (O(n^2) cho việc xử lý dữ liệu lớn)
+  function complexCalculation(n) {
+    let count = 0;
+    for (let i = 0; i < n; i++) {
+      for (let j = 0; j < n; j++) {
+        count += Math.sqrt(i * j);
+      }
+    }
+    return count;
+  }
+
+  // Chạy tính toán nặng khi bắt đầu tải trang
+  let result = complexCalculation(1000);
+  console.log("Kết quả tính toán nặng:", result);
+
+  // Giả lập việc tải dữ liệu người dùng từ API
+  async function fetchUserData() {
+    try {
+      let response = await fetch("https://jsonplaceholder.typicode.com/users");
+      let users = await response.json();
+      users.forEach(user => {
+        addMessage("Chào " + user.name + ", AI đã sẵn sàng hỗ trợ bạn!", false);
+      });
+    } catch (error) {
+      addMessage("Không thể tải dữ liệu người dùng!", false);
+    }
+  }
+
+  // Gọi API để tải dữ liệu người dùng
+  fetchUserData();
+
+</script>
+
+</body>
+</html>

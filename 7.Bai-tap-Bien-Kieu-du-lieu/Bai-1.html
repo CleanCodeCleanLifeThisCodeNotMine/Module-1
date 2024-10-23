@@ -1,0 +1,92 @@
+<!--Bài 1: Viết chương trình nhập điểm của một sinh viên cho các môn: Vật lý, Hóa học, và Sinh học. Sau đó hiển thị điểm trung bình và tổng của những điểm này-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <title>Bai 1</title>
+<!--    <style>-->
+<!--        body {-->
+<!--            font-family: Arial, sans-serif;-->
+<!--        }-->
+<!--        .container {-->
+<!--            margin-top: 20px;-->
+<!--        }-->
+<!--        input {-->
+<!--            padding: 5px;-->
+<!--            margin: 10px;-->
+<!--        }-->
+<!--        button {-->
+<!--            padding: 5px 10px;-->
+<!--            cursor: pointer;-->
+<!--        }-->
+<!--    </style>-->
+</head>
+<body>
+
+<div class="container">
+    <label for="Ly">Nhap diem Ly: </label>
+    <input type="text" id="Ly" placeholder="Nhap diem Ly"> <!-- for = id -->
+    <br>
+    <label for="Hoa">Nhap diem Hoa: </label>
+    <input type="text" id="Hoa" placeholder="Nhap diem Hoa">
+    <br>
+    <label for="Sinh">Nhap diem Sinh: </label>
+    <input type="text" id="Sinh" placeholder="Nhap diem Sinh">
+    <br>
+    <button onclick="TongDiemBaMon()">Tong Diem</button>
+    <button onclick="TrungBinhBaMon()">Trung Binh Cac Mon</button>
+    <div id="Tong_diem"></div> <!-- Kết quả tính sẽ hiển thị tại đây -->
+    <div id="Trung_binh"></div>
+</div>
+
+<script>
+    function TongDiemBaMon() {
+        // Lấy giá trị từ các ô input
+        let Ly = document.getElementById('Ly').value;
+        let Hoa = document.getElementById('Hoa').value;
+        let Sinh = document.getElementById('Sinh').value;
+
+        // Chuyển giá trị từ chuỗi sang số nguyên
+        Ly = parseFloat(Ly);
+        Hoa = parseFloat(Hoa);
+        Sinh = parseFloat(Sinh);
+
+        // Kiểm tra xem dữ liệu nhập có hợp lệ không
+        if (isNaN(Ly) || isNaN(Hoa) || isNaN(Sinh)) {
+            document.getElementById('Tong_diem').innerHTML = "Nhap lai di hoc hanh kieu gi day?";
+        } else {
+            // Tính và hiển thị kết quả
+            let Tong_diem = Ly + Hoa + Sinh;
+            document.getElementById('Tong_diem').innerHTML = "Diem cua ban la: " + Tong_diem;
+        }
+    }
+</script>
+
+<script>
+    function TrungBinhBaMon() {
+        // Lấy giá trị từ các ô input
+        let Ly = document.getElementById('Ly').value;
+        let Hoa = document.getElementById('Hoa').value;
+        let Sinh = document.getElementById('Sinh').value;
+
+        // Chuyển giá trị từ chuỗi sang số nguyên
+        Ly = parseFloat(Ly);
+        Hoa = parseFloat(Hoa);
+        Sinh = parseFloat(Sinh);
+
+        // Kiểm tra xem dữ liệu nhập có hợp lệ không
+        if (isNaN(Ly) || isNaN(Hoa) || isNaN(Sinh)) {
+            document.getElementById('Trung_binh').innerHTML = "Nhap lai di hoc hanh kieu gi day?";
+        } else {
+            // Tính và hiển thị kết quả
+            let Trung_binh = (Ly * Hoa * Sinh)/3;
+            document.getElementById('Trung_binh').innerHTML = "Diem cua ban la: " + Trung_binh.toFixed(1);
+                                //Hàm toFixed(2) được sử dụng để làm tròn kết quả đến (1) chữ số sau dấu phẩy
+        }
+    }
+</script>
+
+</body>
+</html>

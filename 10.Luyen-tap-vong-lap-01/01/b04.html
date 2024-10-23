@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+<!--    Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5    -->
+// let fibonacci = [0, 1]; // Khởi tạo dãy Fibonacci với hai số đầu tiên
+// let found = false; // Biến để kiểm tra nếu đã tìm thấy số chia hết cho 5
+// let i = 2; // Bắt đầu từ vị trí thứ 2
+//
+// while (!found) {
+//     fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2]; // Tính số Fibonacci tiếp theo
+//
+//     if (fibonacci[i] % 5 === 0) { // Kiểm tra nếu số này chia hết cho 5
+//         document.write("Số đầu tiên trong dãy Fibonacci chia hết cho 5 là: " + fibonacci[i]);
+//         found = true; // Đánh dấu là đã tìm thấy
+//     }
+//
+//     i++; // Tăng chỉ số để tính số tiếp theo
+// }
+let a = 0, b = 1, temp;
+
+while (true) {
+    temp = a + b;
+    a = b;
+    b = temp;
+    if (temp % 5 === 0) {
+        document.write("Số Fibonacci đầu tiên chia hết cho 5 là: " + temp);
+        break;
+    }
+}
+
+</script>
+</body>
+</html>

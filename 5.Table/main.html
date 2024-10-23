@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form testing</title>
+</head>
+<body>
+<form method="post" action="/test/granted.html">
+    <fieldset >
+    <legend>Personal information:</legend>
+    First name:<br>
+    <input type="text" name="firstname" placeholder="Gucci" autofocus="1">
+    <br>
+    Last name:<br>
+    <input type="text" name="lastname" placeholder="Prada"> <br>
+        Email: <br>
+        <input type="text" name="email" id="email" placeholder="gmail.com only"> <br>
+        Password: <br>
+        <input type="password" name="password" id="password" placeholder="8-16 charactors" type="hidden"> <br>
+
+        Que Quan: <br>
+        <select name="city">
+            <option value="HN">Hà Nội</option>
+            <option value="HP">Hải Phòng</option>
+            <option value="HU">Huế</option>
+            <option value="DN">Đà Nẵng</option>
+            <option value="SG">Sài Gòn</option>
+        </select>
+        <br> <br>
+        Gioi tinh: <br>
+        <label>
+            <input type="checkbox" class="radio" value="1" name="sex[1][]" />Male</label>
+        <label><br>
+            <input type="checkbox" class="radio" value="1" name="sex[1][]" />Female</label>
+        <label><br>
+            <input type="checkbox" class="radio" value="1" name="sex[1][]" />Meow</label> <br>
+
+        Sở thích:<br/>
+        <label><input name="hobby" value="travel" type="checkbox"/> Du lịch</label> <br/>
+        <label><input name="hobby" value="sport" type="checkbox"/> Thể thao</label> <br/>
+        <label><input name="hobby" value="cooking" type="checkbox"/> Nấu ăn</label> <br/>
+        <br><br>
+     <input type="reset" value="Reset"/><input type="submit" value="Login">
+    </fieldset>
+</form>
+</body>
+</html>

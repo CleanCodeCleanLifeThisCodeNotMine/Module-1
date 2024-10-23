@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<script>
+    // function checkNT(number) {
+    //     let count = 0;
+    //     let countSNT = 0;
+    //     for (let i = 2; i < 1000; i++) {
+    //         if (countSNT < number) {
+    //             for (let j = 1; j <= i; j++) {
+    //                 if (i % j == 0) {
+    //                     count += 1;
+    //                 }
+    //             }
+    //             if (count == 2) {
+    //                 document.write(i + "<br>"); //4
+    //                 countSNT += 1;
+    //             }
+    //             count = 0;
+    //         } else {
+    //             break;
+    //         }
+    //     }
+    // }
+    // let number = parseInt(prompt("Nhập n số nguyên tố đầu tiên: ")); //10
+    // checkNT(number);
+
+    // kiem tra 1 so co phai so nguyen to hay khong?
+    // ham kiem tra 1 so có phai snt:
+    // tham so n, tra ve true, neu n la snt, tra ve false neu n khong la snt
+    // duyet i tu 2-> (n-1)
+    // xem n ma n chia het cho i dung lai luon
+    function isPrime(n) {
+        if (n <=1) {return false};
+        // so 2 va so 3 la snt
+        if (n <= 3) {return true};
+        for (let i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) return false;
+        }
+        return true;
+    }
+
+    let start=9;
+    let count=0;
+    const number=5;
+    while(count<number){
+        if(isPrime(start)){
+            document.write(start + "<br>");
+            count++;
+        }
+        start ++;
+    }
+</script>
+</body>
+
+</html>

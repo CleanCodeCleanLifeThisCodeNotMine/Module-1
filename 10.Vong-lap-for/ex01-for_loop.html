@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let text = "";
+    let cars = ["c","o", "d", "e", "g", "y", "m"];
+    text += cars[0] + "<br>";
+    text += cars[1] + "<br>";
+    text += cars[2] + "<br>";
+    text += cars[3] + "<br>";
+    text += cars[4] + "<br>";
+    text += cars[5] + "<br>";
+    document.write(text);
+    // VD: in ra tất cả các phần tử của mảng cars gồm 6 phần tử mà không sử dụng vòng lặp
+
+    //dùng vòng lặp for:
+    let text = "";
+    let cars = ["c","o", "d", "e", "g", "y", "m"];
+    for (i = 0; i < cars.length; i++) {
+        text += cars[i] + "<br>";
+    }
+    document.write(text);
+
+    //Cú pháp của vòng lặp for như sau:
+    for (lệnh khởi động vòng lặp đầu tiên; điều kiện tiếp diễn; lệnh kết thúc mỗi vòng lặp) {
+        // các đoạn mã được thực hiện lặp
+    }
+</script>
+</html>

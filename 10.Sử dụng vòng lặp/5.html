@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <script>
+     let sout;
+     sout = "<table border='1' width='300' cellspacing='0' cellpadding='3'>"
+     // Vòng lặp for ngoài dùng để in ra số dòng. Gồm 10 dòng. Do đó vòng lặp sẽ là:
+     for (dong = 1; dong <= 10; dong++) {
+         sout = sout + "<tr>";
+         // Vòng lặp trong in ra giá trị từng cột trên mỗi dòng. Gồm 10 cột cho mỗi dòng. Do đó vòng lặp sẽ là:
+         for (cot = 1; cot <= 10; cot++) {
+             sout = sout + "<td>" + dong * cot + "</td>";
+         }
+         sout = sout + "</tr>";
+     }
+     sout = sout + "</table>";
+     document.write(sout);
+ </script>
+</body>
+</html>

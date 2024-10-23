@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2</title>
+</head>
+<body>
+<h1>Cho be di hoc</h1>
+<label for="numb1">Nhap do tuoi:</label>
+<input type="text" name="" id="numb1">
+
+<br>
+
+<button onclick="cal()">Calculate</button>
+
+<p id="result"></p>
+</body>
+
+<script>
+  function cal() {
+    let a = +document.getElementById("numb1").value;
+
+    if (a>=15) {
+      document.getElementById("result").innerHTML = 'duoc di hoc'
+    } else {
+      document.getElementById("result").innerHTML = 'o nha'
+
+    }
+  }
+</script>
+</html>

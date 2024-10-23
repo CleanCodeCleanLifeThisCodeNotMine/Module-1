@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversion</title>
+</head>
+<body>
+
+<label for="foot">Nhập số foot:</label>
+<input type="text" id="foot" oninput="updateResult('foot')"> <br>
+Số Meters: <p id="footResult"></p>
+<hr>
+<label for="meters">Nhập số meters:</label>
+<input type="text" id="meters" oninput="updateResult('meters')"> <br>
+Số Feet: <p id="metersResult"></p>
+
+<script>
+    function updateResult(type) {
+        let value = document.getElementById(type).value;
+        let result = type === 'foot' ? (0.305 * value).toFixed(2) : (3.279 * value).toFixed(2);
+        document.getElementById(type === 'foot' ? 'footResult' : 'metersResult').innerHTML = value ? result : '';
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1</title>
+</head>
+<body>
+<label for="numb1">Nhap so a:</label>
+<input type="text" name="" id="numb1">
+<br>
+<label for="numb2">Nhap so b:</label>
+<input type="text" name="" id="numb2">
+<br>
+<button onclick="cal()">Calculate</button>
+<p id="result"></p>
+</body>
+
+<script>
+    function cal() {
+        let a = +document.getElementById("numb1").value;
+        let b = +document.getElementById("numb2").value;
+
+        if (a % b === 0) {
+            document.getElementById("result").innerHTML = 'a co chia het cho b'
+        } else {
+            document.getElementById("result").innerHTML = 'a deo chia het cho b'
+
+        }
+    }
+</script>
+</html>

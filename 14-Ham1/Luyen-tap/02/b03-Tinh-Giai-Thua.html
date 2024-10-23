@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="numb"> Nhap so</label>
+<input type="text" id="numb">
+<button type="button" onclick="cal()">Calculate</button>
+<p id="result"></p>
+</body>
+<script>
+  function cal() {
+    let a = document.getElementById("numb").value
+    result = 1
+    if (a > 1) {
+      for (let i = 2; i <= a; i++) {
+        result *= i;
+      }
+    }
+    document.getElementById("result").innerHTML = 'Giai thua cua ' + a + ' la: ' + result
+  }
+</script>
+</html>

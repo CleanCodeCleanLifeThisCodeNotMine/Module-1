@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function tinhGiaiThua(n) {
+        if (n === 0 || n === 1) {
+            return 1; // Giai thừa của 0 và 1 đều bằng 1
+        } else {
+            let giaiThua = 1;
+            for (let i = 2; i <= n; i++) {
+                giaiThua *= i; // Nhân giai thừa với i
+            }
+            return giaiThua;
+        }
+    }
+
+    let n = parseInt(prompt("Nhập một số nguyên dương:")); // Nhập số từ người dùng
+    if (n >= 0) {
+        // let ketQua = tinhGiaiThua(n);
+        document.write("Giai thừa của " + n + " là: " + tinhGiaiThua(n).toLocaleString());
+    } else {
+        document.write("Vui lòng nhập một số nguyên dương.");
+    }
+
+</script>
+</body>
+</html>

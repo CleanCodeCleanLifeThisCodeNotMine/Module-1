@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>checkcheckcheck</h3>
+<label for="numb1">Nhap so:</label>
+<input type="text" name="" id="numb1">
+
+<br>
+
+<button onclick="cal()">Calculate</button>
+
+<p id="result"></p>
+</body>
+<script>
+  function cal(){
+    let num = +document.getElementById("numb1").value
+        if (num > 0){
+          document.getElementById("result").innerHTML = 'So ' + num + ' lon hon 0'
+        } else {
+          document.getElementById("result").innerHTML = 'So ' + num + ' nho hon 0'
+        }
+  }
+</script>
+</html>

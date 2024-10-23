@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <label for="sotien">Nhap So Tien: </label>
+    <input type=number id="sotien" placeholder="Sotien"> <!-- for = id -->
+    <br>
+    <label for="From">From</label>
+    <select id="From">
+        <option value="VND">VND</option>
+        <option value="USD">USD</option>
+    </select>
+    <br>
+    <label for="To">To</label>
+    <select id="To">
+        <option value="VND">VND</option>
+        <option value="USD">USD</option>
+    </select>
+    <br>
+    <button onclick="cal()">Calcuate</button>
+    <div id="ketqua"></div> <!-- Kết quả tính sẽ hiển thị tại đây -->
+</div>
+
+
+<script>
+    function cal() {
+        let Amount = document.getElementById("sotien").value;
+        let FromC = document.getElementById("From").value;
+        let To = document.getElementById("To").value;
+        let Result;
+
+
+        if (FromC == "USD" && To == "VND") {
+            Result = "Result: " + (Amount * 25000) + " VNĐ";
+        }
+        else if (FromC == "VND"&& To =="USD"){
+            Result = "Result: "+ (Amount / 25000) + " $";
+        }
+        else if (FromC == "VND") {
+            Result = "Result: " + Amount + " Đ"
+        } else {
+            Result = "Result: " + Amount + " $"
+        }
+
+        document.getElementById("ketqua").innerHTML = Result;
+    }
+</script>
+
+<!--<body>-->
+<!--<table>-->
+<!--    <tr>-->
+<!--        <th><label for="Amount">Amount</label></th>-->
+<!--        <th>From Currency</th>-->
+<!--        <th>To Currency</th>-->
+<!--        <th></th>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td><input type="text" id="Amount"></td>-->
+<!--        <td>-->
+<!--            <select id="From">-->
+<!--                <option value="VND">VND</option>-->
+<!--                <option value="USD">USD</option>-->
+<!--            </select>-->
+<!--        </td>-->
+<!--        <td>-->
+<!--            <select id="To">-->
+<!--                <option value="VND">VND</option>-->
+<!--                <option  value="USD">USD</option>-->
+<!--            </select>-->
+<!--        </td>-->
+<!--        <td><button onclick="ChangeMoney()">Convert</button></td>-->
+<!--    </tr>-->
+<!--</table>-->
+
+<!--<br>-->
+<!--<p id="Result"></p>-->
+<!--</body>-->
+
+<!--<script>-->
+<!--    function cal() {-->
+<!--        // Lấy giá trị từ các ô input-->
+<!--        let sotien = document.getElementById('sotien').value;-->
+
+<!--        // Chuyển giá trị từ chuỗi sang số nguyên-->
+<!--        sotien = parseFloat(sotien);-->
+
+<!--        // Kiểm tra xem dữ liệu nhập có hợp lệ không-->
+<!--        if {-->
+<!--            // Tính và hiển thị kết quả-->
+<!--            let ketqua = sotien/25000;-->
+<!--            document.getElementById('ketqua').innerHTML = "So tien sau quy doi la: " + ketqua;-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+
+</body>
+</html>

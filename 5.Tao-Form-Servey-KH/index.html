@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Survey</title>
+</head>
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  thead {
+    background-color: lightslategray;
+  }
+</style>
+<body>
+<header id="header" class="info">
+  <h2 class="">Market Research Survey</h2>
+  <div class="">Please take a few moments to complete this satisfaction survey. </div>
+</header>
+
+
+<br>
+<label style="font-weight: bold">
+  What is your age range?
+</label> <br>
+<select name="age">
+  <option value="">18-24</option>
+  <option value="">25-34</option>
+  <option value="">35-50</option>
+  <option value="">50+</option>
+</select><br><br>
+
+
+<label style="font-weight: bold">
+  What is your yearly income range?
+</label><br>
+<select name="age">
+  <option value="">$0 - $25,000</option>
+  <option value="">$25,001 - $50,000</option>
+  <option value="">$50,001 - $100,000</option>
+  <option value="">$100,000+</option>
+</select><br><br>
+
+<label style="font-weight: bold">
+  Gender Identity
+</label><br>
+<label>
+  <input type="radio" class="radio" value="1" name="fooby[1][]" />Male</label>
+<label><br>
+  <input type="radio" class="radio" value="1" name="fooby[1][]" />Female</label>
+<label><br>
+  <input type="radio" class="radio" value="1" name="fooby[1][]" />Nonbinary</label><br>
+  <input type="radio" class="radio" value="1" name="fooby[1][]" />Other</label><br>
+
+
+<label style="font-weight: bold">
+  Which of the following products have your purchased in the last 2 months. Please check all that apply.
+</label><br>
+<label>
+  <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Product 1</label>
+<label><br>
+  <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Product 2</label>
+<label><br>
+  <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Product 3</label><br>
+
+
+
+<label style="font-weight: bold">
+  How often would you use our new product?
+</label><br>
+<label>
+  <input type="radio" class="radio" value="1" name="fooby[1][]" />Daily</label>
+<label><br>
+  <input type="radio" class="radio" value="1" name="fooby[1][]" />Weekly</label>
+<label><br>
+  <input type="radio" class="radio" value="1" name="fooby[1][]" />Monthly</label><br>
+
+
+<label style="font-weight: bold">
+  What would you pay for the new product?
+</label><br>
+<span class="symbol">$</span>
+<span>
+		<input type="text" value="" 			size="10" tabindex="0"/>
+		<label>Dollars</label>
+	</span>
+<span class="symbol radix">.</span>
+<span class="cents">
+		<input  type="text" 			class="field text nospin" 			value="" size="2" 			maxlength="2"tabindex="0""/>
+		<label>Cents</label>
+	</span><br>
+
+
+
+<label style="font-weight: bold">
+  What features would you like to see in the new product.
+</label>
+<textarea id="Field806"
+          name="Field806"
+          class="field textarea medium"
+          spellcheck="true"
+          rows="10" cols="50"
+></textarea>
+
+<div>
+  <h4>What feature would you like to see in our new product</h4>
+  <label><textarea rows="5" cols="50"></textarea></label>
+  <h4>Please rate your level of agreement with the following statement</h4>
+  <table>
+    <thead>
+    <tr>
+      <th>Statement</th>
+      <th>Strongly disagree</th>
+      <th>Disagree</th>
+      <th>Agree</th>
+      <th>Strongly agree</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th>Our product are price fairly</th>
+      <td><label><input name="r1" value="1" type="radio"></label>1</td>
+      <td><label><input name="r1" value="2" type="radio"></label>2</td>
+      <td><label><input name="r1" value="3" type="radio"></label>3</td>
+      <td><label><input name="r1" value="4" type="radio"></label>4</td>
+    </tr>
+    <tr>
+      <th>Our product are high quality</th>
+      <td><label><input name="r2" value="1" type="radio"></label>1</td>
+      <td><label><input name="r2" value="2" type="radio"></label>2</td>
+      <td><label><input name="r2" value="3" type="radio"></label>3</td>
+      <td><label><input name="r2" value="4" type="radio"></label>4</td>
+    </tr>
+    <tr>
+      <th>You would recommend our product to your friend and family</th>
+      <td><label><input name="r3" value="1" type="radio"></label>1</td>
+      <td><label><input name="r3" value="2" type="radio"></label>2</td>
+      <td><label><input name="r3" value="3" type="radio"></label>3</td>
+      <td><label><input name="r3" value="4" type="radio"></label>4</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

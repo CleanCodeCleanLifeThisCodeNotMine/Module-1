@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let numb = []
+  for (let i = 0; i < 3; i++) {
+    numb[i] = prompt('Nhap so thu ' + (i+1))
+  }
+  let min = numb[0]
+  for (let i = 0; i < numb.length; i++) {
+    if (numb[i] < min){
+      min = numb[i]
+    }
+    alert('So nho nhat la:' + min)
+  }
+</script>
+</body>
+</html>

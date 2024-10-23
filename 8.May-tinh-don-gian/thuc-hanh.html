@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+    button {
+        width: 120%;
+        text-align: center;
+    }
+
+</style>
+<body>
+<h1>May tinh Nasa</h1>
+<input type="text" name="" id="nhapso">
+
+<div>
+
+    <table>
+        <tr>
+            <td><button type="button" name="" value="1" onclick="inputValue(this.value)">1</button></td>
+            <td><button type="button" name="" value="2" onclick="inputValue(this.value)">2</button></td>
+            <td><button type="button" name="" value="3" onclick="inputValue(this.value)">3</button></td>
+            <td><button type="button" name="" value="+" onclick="inputValue(this.value)">+</button></td>
+        </tr>
+        <tr>
+        <td><button type="button" name="" value="4" onclick="inputValue(this.value)">4</button></td>
+        <td><button type="button" name="" value="5" onclick="inputValue(this.value)">5</button></td>
+        <td><button type="button" name="" value="6" onclick="inputValue(this.value)">6</button></td>
+        <td><button type="button" name="" value="-" onclick="inputValue(this.value)">-</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" name="" value="7" onclick="inputValue(this.value)">7</button></td>
+            <td><button type="button" name="" value="8" onclick="inputValue(this.value)">8</button></td>
+            <td><button type="button" name="" value="9" onclick="inputValue(this.value)">9</button></td>
+            <td><button type="button" name="" value="*" onclick="inputValue(this.value)">*</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="xoa()">AC</button></td>
+            <td><button type="button" name="" value="0" onclick="inputValue(this.value)">0</button></td>
+            <td><button type="button" onclick="ketqua()">=</button></td>
+            <td><button type="button" name="" value="/" onclick="inputValue(this.value)">/</button></td>
+        </tr>
+    </table>
+
+</div>
+</body>
+
+<script>
+
+    let nhapso = document.getElementById("nhapso");
+    function inputValue(value) {
+        nhapso.value += value
+    }
+
+    function  ketqua() {
+        let ketqua = eval(nhapso.value)
+        nhapso.value = ketqua;
+
+    }
+
+    function xoa()  {
+
+        nhapso.value = ""
+    }
+
+</script>
+</html>

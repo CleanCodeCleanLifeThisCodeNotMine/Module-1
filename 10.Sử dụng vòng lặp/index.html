@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+
+<script>
+    // let num = prompt("Enter a number: ");
+    // let total = 0;
+    // while (num != -1) {
+    //     num = prompt("nhap so")
+    //     alert(total += num)
+    // }
+
+    // Bước 1: Khai báo biến num để lưu giá trị nhập vào từ hộp thoại
+    let num = prompt("Enter a number: ");
+
+    // Bước 2: Khai báo biến total = 0, lưu tổng
+    let total = 0;
+
+    // Bước 4: Viết mã phần thân vòng lặp
+    while (num != -1) {
+        // Hiển thị số vừa nhập
+        alert("You entered: " + num);
+
+        // Thực hiện tính tổng, chuyển num thành số (vì prompt trả về chuỗi)
+        total += parseInt(num);
+
+        // Yêu cầu người dùng nhập tiếp số
+        num = prompt("Enter a number (enter -1 to stop): ");
+    }
+
+    // Bước 5: Hiển thị tổng
+    alert("The total sum is: " + total);
+
+</script>
+</html>
